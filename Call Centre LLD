@@ -1,0 +1,151 @@
+package com.amazon.hfchotel.test.callCentre;
+
+public class CallCentreLLD {
+
+    /*
+     * Design a Call Centre
+     *
+     * FR
+     *
+     * - Call comes to call centre then operator handles the call
+     * - operator- supervisior - director
+     * - Record the phone call for training purposes
+     * - Keep data for analytics like wait time, call time, user feedback
+     *
+     * NFR
+     * - Calls should be distributed evenly between the operators
+     * - call centre should be available 24/7
+     * - 100000 calls a day
+     * - wait time to be lowest possible
+     * HLD - https://drive.corp.amazon.com/documents/joymala@/IMG20240415122012.jpg
+     *
+     * LLD
+     *
+     * Api's
+     * User service
+     * List<Integer> getValidInputs(){
+     *   return the valid inputs as integers
+     *   voice notes to be saved at cdn
+     *
+     * }
+     *
+     * void saveInput(integer input, user phonenum){
+     * encrypt user phone num and generate user id from it
+     * save user id , input in db
+     *
+     * }
+     *
+     * operator service
+     *
+     * Operator assignOperator(queue event){
+     *   [queue event has user id and input in db]
+     *   operator id = getOperator(event);
+     *   save operator id in db wrt to user id
+     *
+     *   return operator
+     * }
+     *
+     * operators are saved as a Priority queue
+     * opId -> status -> TimeInCurrentCall
+     * Integer getOperator(queue event){
+     *   get the first element from PQ
+     *   update the status of operator as occupied
+     *   return opID;
+     * }
+     *
+     * this is polled for every 30 seconds if screen is not refreshed
+     * List<Calls> getMyCalls(integer operatorId){
+     *
+     * queries the db to get all the calls for the operator id
+     * uses current time to return calls that have not started yet and the current call in progress
+     *
+     * }
+     *
+     * operator clicks on start call in UI
+     *
+     * Call service
+     *
+     * Call startCall(Operator operator){
+     * generates a call id
+     * persists the same for the user id and op id , persists start time ,
+     * update the call status as inp
+     * calls record service's startRecording api
+     * returns call object;
+     *
+     * }
+     *
+     * Call endCall(call id ){
+     * persists call end time
+     * calls record service's end recoding api
+     * update the call status as ended
+     * adds operator back to PQ
+     * update recording link
+     * returns call object;
+     *
+     * }
+     *
+     * database structure
+     * Call table
+     * userid|callId|opId|CallStartTime|CallendTime|Recording id
+     *
+     * Record service
+     *
+     * Recording startRecording(Call call){
+     * generate a recoding id
+     * add recording start time in db
+     *
+     * }
+     *
+     * Recording endRecording(recoding  id){
+     * save the recording in s3 and save the link of the recording in db
+     * add recording end time in db
+     *
+     * }
+     * recoding table
+     * recording id|RecodingStartTime|RecodingEndTime|recoding link
+     *
+     * S3 with recoding id -> recoding record mp3
+     *
+     * Cron runs at 03:00 am at every month end
+     * Archival Service
+     * booelan saveDataToAwsRDS(){
+     *
+     * move the data from last moth to archival
+     * return if the process is sucessful
+     * }
+     *
+     *
+     * Classes and interfaces
+     *
+     * User{
+     * String userID;
+     * }
+     *
+     * Call{
+     * String callId;
+     * Timestap callStartTime;
+     * TimeStamp callEndTime;
+     * }
+     * Enum CallStatus{
+     *  WAITING
+     *  INPROGRESS
+     *  END
+     * }
+     *
+     * Class Operator{
+     * String operatorId;
+     * String operatorName;
+     * OperatorStatus status;
+     * Long timeFromCurrentCall;
+     * }
+     *
+     * Class Recording{
+     * id
+     * start time
+     * end time
+     * link
+     * }
+     *
+     */
+
+}
