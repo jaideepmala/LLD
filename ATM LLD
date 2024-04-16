@@ -1,0 +1,64 @@
+package com.amazon.hfchotel.test.atm;
+
+public class AtmLLD {
+
+    /**
+     * The main components of the ATM that will affect interactions between the ATM and its users are:
+     *
+     *     Card reader: to read the users’ ATM cards.
+     *     Keypad: to enter information into the ATM e.g. PIN. cards.
+     *     Screen: to display messages to the users.
+     *     Cash dispenser: for dispensing cash.
+     *     Deposit slot: For users to deposit cash or checks.
+     *     Printer: for printing receipts.
+     *     Communication/Network Infrastructure: it is assumed that the ATM has a communication infrastructure to communicate with the bank upon any transaction or activity.
+     *
+     *     The user can have two types of accounts: 1) Checking,
+     *     and 2) Savings, and should be able to perform the following
+     *     five transactions on the ATM:
+     *
+     *     Balance inquiry: To see the amount of funds in each account.
+     *     Deposit cash: To deposit cash.
+     *     Deposit check: To deposit checks.
+     *     Withdraw cash: To withdraw money from their checking account.
+     *     Transfer funds: To transfer funds to another account.
+     *
+     * Account{
+     * String accountId;
+     * double totalBalance;
+     * }
+     *
+     * public interface IAccount{
+     *     double checkBalance(Account account);
+     *
+     * }
+     *
+     * public class AccountService implements IAccount{
+     * @Override
+     * double checkBalance(final Account account){
+     *     return account.getTotalBalance();
+     * }
+     * }
+     *
+     * Card{
+     * String cardNumber;
+     * }
+     *
+     * Customer{
+     * String name;
+     * String address;
+     * Card card;
+     * Account account;
+     * }
+     *
+     * SavingsAccount extends Account{
+     *  double withdrawalLimit;
+     * }
+     *
+     * CheckingAccount extends Account{
+     *   String debitCardNumber;
+     * }
+     * remaining in
+     * https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-an-atm.md
+     */
+}
