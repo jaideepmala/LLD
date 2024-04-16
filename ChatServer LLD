@@ -1,0 +1,102 @@
+package com.amazon.hfchotel.test.chatServer;
+
+public class ChatServerLLD {
+
+    /*
+     * User Registration and Authentication: Users should be able to create accounts, log in, and authenticate themselves to access the chat system.
+     * Real-Time Messaging: Users should be able to send and receive messages in real-time, enabling instant communication.
+     * Group Chat: The system should support group chats, allowing multiple users to participate in a single conversation.
+     * Private Messaging: Users should be able to send private messages to specific users, ensuring privacy and one-on-one communication.
+     * Presence and Status: The system should track the presence and online status of users, indicating whether they are currently active or offline.
+     * Message History: Users should be able to view and retrieve their message history, including group chat conversations and private messages.
+     */
+
+    /*
+     * User{
+     * public String userId;
+     * public String userName;
+     * public String userPassword; // encrypted password
+     *
+     * @Override
+     * public boolean equals(Object obj){
+     * if(obj == this){
+     * return true;
+     * }
+     * if(obj == null || obj.getClass()!=this.getClass()) return false;
+     *
+     * User user = (User) user;
+     * return user.userId == this.userId;
+     * }
+     *
+     * @Override
+     * public int hashCode(){
+     * final int PRIME = 31;
+     * int result = 1;
+     * result = PRIME * result * getId();
+     * return result;
+     * }
+     *
+     *
+     * Assuming only text content
+     * Message{
+     * public String messageId;
+     * public String content;
+     * public LocalDateTime timestamp;
+     * }
+     *
+     * ChatRoom{
+     * public String roomId;
+     * List<User> users;
+     * List<Message> messages;
+     * }
+     *
+     * UserService interface
+     *
+     * public interface IUserService{
+     * void registerUser(final User user);
+     * void deRegisterUser(final User user);
+     * boolean isRegisteredUser(final User user);
+     * }
+     *
+     * public class UserService implements IUserService{
+     * private Set<User> users;
+     *
+     * void registerUser(final User user){
+     * users.add(user);
+     *
+     * }
+     * void deRegisterUser(final User user){
+     * users.remove(user);
+     * }
+     * boolean isRegisteredUser(final User user){
+     * return users.contains(user);
+     * }
+     * }
+     *
+     *
+     * public interface IChatServer{
+     * void sendMessage(ChatRoom chatRoom, Message message);
+     * List<Messages> listMessages(ChatRoom chatroom);
+     * }
+     *
+     * public class ChatServer implements IChatServer{
+     *
+     * Map<String,List<Message>> chatServer;
+     * sendMessage(ChatRoom chatRoom, Message message){
+     * String roomId = chatRoom.getRoomId();
+     * List<Message> messages = chatServer.get(roomId);
+     * if(messages ==null) messages = new ArrayList()<>;
+     * chatServer.put(roomId,messages.add(message));
+     * }
+     *
+     * List<Messages> listMessages(ChatRoom chatroom){
+     * return chatServer.get(chatRoom.getRoomId());
+     * }
+     * }
+     *
+     * public interface IPresenceService{
+     * boolean getPresence(User user);
+     * updatePresence(User user);
+     * }
+     */
+}
