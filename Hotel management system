@@ -1,0 +1,96 @@
+package com.amazon.hfchotel.test.hotelManagement;
+
+public class HotelManagementSystemLLD {
+    //Design a Hotel Management System
+
+    /*
+     * Requirements
+     * Actors: Hotel-> Guests, Staff, Rooms, Restaurant, Reception,
+     * Guests should be able to book room, meal, checkin , checkout, instruct to clean room
+     * Staff to be able to add room, remove room, set checkin, checkout time,
+     *
+     * public class Address{
+     * String streetName;
+     * String pincode;
+     * }
+     *
+     * public enum RoomType{
+     * DELUXE,
+     * STANDARD,
+     * SINGLE,
+     * DOUBLE
+     * }
+     *
+     * public class keyCard{
+     * String keyCardId;
+     * String roomNumber;
+     *
+     * }
+     * public class Room{
+     * String roomNumber;
+     * String floorNumber;
+     * RoomType roomType;
+     * int numBathrooms
+     * int beds;
+     * int windows;
+     * boolean isAC;
+     * List<Guest> guests;
+     * Keycard keycard;
+     * }
+     *
+     * public class Guest{
+     * String id;
+     * String name;
+     * Address guestAddress;
+     * String phoneNum;
+     * Room room;
+     * }
+     *
+     *
+     * public class Staff{
+     * String name;
+     * String empId;
+     * }
+     *
+     * public class receptionist extends Staff{
+     * String receptionId;
+     * }
+     * public class Manager extends Staff{
+     * String managerId;
+     * }
+     *
+     * public class RoomService extends Staff{
+     * List<Rooms> roomsCleaned;
+     * }
+     *
+     * public class Cooks extends Staff{
+     *
+     * } etc etc
+     *
+     * public class Hotel{
+     * String HotelId;
+     * String hotelName;
+     * String hotelStarRating;
+     * Address hotelAddress;
+     * Pincode hotelCoordinates;
+     * List<Room> rooms;
+     * List<Guest> guests;
+     * }
+     *
+     *
+     * public interface IGuestService{
+     * Room bookRoom(List<Guest>, RoomType roomType);
+     * Room checkoutFromRoom(List<Guest>, RoomType roomType, Room room);
+     * void cleanRoom(Room room);
+     * }
+     *
+     *
+     * public interface IHotelService{
+     * void addRoom(Room room);
+     * void removeRoom(Room room);
+     * void updateRoomDetails(Room room);
+     * void updateHotelDetails(details);
+     * }
+     */
+
+}
